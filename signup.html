@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="signup.css">
+    </head>
+    <body>
+      <div class="row">
+    <div class="col-md-12">
+      <form action="index.html" method="post">
+        <h1> 회원가입 </h1>
+        
+        <fieldset>
+          
+          <legend><span class="number">1</span> 기본 정보</legend>
+        
+          <label for="name">계정명:</label>
+          <input type="text" id="account" name="user_account">
+        
+          <label for="email">이메일:</label>
+          <input type="email" id="mail" name="user_email">
+       
+          <label for="password">암호:</label>
+          <input type="password" id="password"       name="user_password">
+        
+			<label for="confirm_password">암호 확인:</label>
+			<input type="password" id="c_password" name="confirm_password">
+			<font id="chkNotice" size="2"></font>
+			
+        </fieldset>
+        <fieldset>  
+        
+          <legend><span class="number">2</span> Your Profile</legend>
+          
+         <label for="bio">Bio:</label>
+          <textarea id="bio" name="user_bio"></textarea>
+        
+       
+        
+         <label for="job">Job Role:</label>
+          <select id="job" name="user_job">
+            <optgroup label="Web">
+              <option value="frontend_developer">Front-End Developer</option>
+              <option value="php_developer">PHP Developer</option>
+              <option value="python_developer">Python Developer</option>
+              <option value="rails_developer">Rails Developer</option>
+              <option value="web_designer">Web Designer</option>
+              <option value="wordpress_developer">Wordpress Developer</option>
+            </optgroup>
+            <optgroup label="Mobile">
+              <option value="android_developer">Android Developer</option>
+              <option value="ios_developer">IOS Developer</option>
+              <option value="mobile_designer">Mobile Designer</option>
+            </optgroup>
+            <optgroup label="Business">
+              <option value="business_owner">Business Owner</option>
+              <option value="freelancer">Freelancer</option>
+            </optgroup>
+          </select>
+          
+          <label>Interests:</label>
+          <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
+          <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
+          <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
+          
+         </fieldset>
+       
+        <button type="submit">Sign Up</button>
+		<script>
+		  $(function(){
+    $('#password').keyup(function(){
+      $('#chkNotice').html('');
+    });
+
+    $('#c_password').keyup(function(){
+
+        if($('#password').val() != $('#c_password').val()){
+          $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+          $('#chkNotice').attr('color', '#f82a2aa3');
+        } else{
+          $('#chkNotice').html('비밀번호 일치함<br><br>');
+          $('#chkNotice').attr('color', '#199894b3');
+        }
+
+    });
+});
+		  </script>  
+        
+       </form>
+        </div>
+      </div>
+	</body>
+		<!--Copyright (c) 2020 by Aaron Cuddeback (https://codepen.io/gymratpacks/pen/VKzBEp)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
+</html>
